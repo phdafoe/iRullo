@@ -41,15 +41,26 @@ class IRGameListViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "addGameSegue"{
+            let navVC = segue.destination as! UINavigationController
+            let datalleVC = navVC.topViewController as! IRAddGameViewController
+            datalleVC.manageContext = manageContext
+        }
+        
+        if segue.identifier == "editGameSegue"{
+        
+        }
+        
+        
+        
     }
-    */
+    
 
 }//TODO: - FIN DE LA CLASE
 
@@ -73,11 +84,20 @@ extension IRGameListViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let customCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! IRDetailCustomCell
         
+        //Pintar datos
+        
         return customCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "editGameSegue", sender: self)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offSetY = scrollView.contentOffset.y
+        if offSetY < -120{
+            performSegue(withIdentifier: "addGameSegue", sender: self)
+        }
     }
     
     

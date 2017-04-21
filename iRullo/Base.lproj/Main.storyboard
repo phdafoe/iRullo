@@ -106,7 +106,7 @@
                                             <outlet property="myBorrowedToLBL" destination="8Dx-pz-hQL" id="r9U-wy-VhB"/>
                                             <outlet property="myImageGAme" destination="Wyu-FU-SOH" id="jCI-Kg-AS0"/>
                                             <outlet property="myNameGame" destination="r1X-bz-qft" id="nxl-fQ-Ie5"/>
-                                            <segue destination="qE8-C9-eRY" kind="show" id="yPU-wo-Hrq"/>
+                                            <segue destination="qE8-C9-eRY" kind="show" identifier="editGameSegue" id="yPU-wo-Hrq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -127,7 +127,7 @@
                     <connections>
                         <outlet property="myCollectionView" destination="yde-9B-ax2" id="Nb8-1n-qvo"/>
                         <outlet property="myFilterSegmentControll" destination="iUS-e0-GEM" id="lMi-sM-BUO"/>
-                        <segue destination="7IL-3j-vUF" kind="presentation" id="1c9-HF-DLC"/>
+                        <segue destination="7IL-3j-vUF" kind="presentation" identifier="addGameSegue" id="1c9-HF-DLC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -166,6 +166,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eot-Z0-QIj">
                                 <rect key="frame" x="153" y="382" width="51" height="31"/>
                                 <color key="onTintColor" red="0.52156862745098043" green="0.10980392156862745" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="mySwitchChangeValue:" destination="qE8-C9-eRY" eventType="valueChanged" id="xpc-bM-zYw"/>
+                                </connections>
                             </switch>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0Gb-Bv-CWD">
                                 <rect key="frame" x="5" y="421" width="310" height="94"/>
@@ -248,6 +251,9 @@
                                 <state key="normal" title="ELIMINAR VIDEOJUEGO">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="myDeleteGameFromCoreData:" destination="qE8-C9-eRY" eventType="touchUpInside" id="daj-PT-lG9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,6 +273,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CNq-bi-1Qi"/>
+                    <connections>
+                        <outlet property="myBorrowedDateGame" destination="OKg-AR-rKL" id="f7L-wr-glf"/>
+                        <outlet property="myBorrowedToGame" destination="XN2-Cl-PgY" id="dIV-cl-7SP"/>
+                        <outlet property="myEliminarBTN" destination="dsY-XN-6AP" id="dP9-Za-gYr"/>
+                        <outlet property="myImagenGame" destination="x46-wf-WXR" id="cfg-Pz-7Qu"/>
+                        <outlet property="mySwitch" destination="eot-Z0-QIj" id="sbK-rj-oUh"/>
+                        <outlet property="myTitleGame" destination="KRR-Qa-W8z" id="j6p-NB-w0f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8N-A8-Qlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
