@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B39C83B1EAA4EFB00D6B782 /* APIUTILS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B39C83A1EAA4EFB00D6B782 /* APIUTILS.swift */; };
 		8B9A904F1E981E3F00CA494F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A904E1E981E3F00CA494F /* AppDelegate.swift */; };
 		8B9A90541E981E3F00CA494F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9A90521E981E3F00CA494F /* Main.storyboard */; };
 		8B9A90571E981E3F00CA494F /* iRullo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A90551E981E3F00CA494F /* iRullo.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B39C83A1EAA4EFB00D6B782 /* APIUTILS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUTILS.swift; sourceTree = "<group>"; };
 		8B9A904B1E981E3F00CA494F /* iRullo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRullo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9A904E1E981E3F00CA494F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B9A90531E981E3F00CA494F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				8B9A904E1E981E3F00CA494F /* AppDelegate.swift */,
+				8B39C83A1EAA4EFB00D6B782 /* APIUTILS.swift */,
 				8B9A90691E98215900CA494F /* VIEWS_CONTROLLERS */,
 				8B9A90521E981E3F00CA494F /* Main.storyboard */,
 				8B9A90581E981E3F00CA494F /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 				8B9A90661E9820F300CA494F /* IRAddGameViewController.swift in Sources */,
 				8B9A904F1E981E3F00CA494F /* AppDelegate.swift in Sources */,
 				8B9A90681E98213900CA494F /* IRDetailCustomCell.swift in Sources */,
+				8B39C83B1EAA4EFB00D6B782 /* APIUTILS.swift in Sources */,
 				8B9A90641E9820DF00CA494F /* IRGameListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +321,7 @@
 				8B9A90621E981E3F00CA494F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

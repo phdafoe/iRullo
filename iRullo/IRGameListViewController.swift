@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import CoreData
 
 class IRGameListViewController: UIViewController {
-
+    
+    //MARK: - Variables locales
+    var manageContext : NSManagedObjectContext?
+    var listGames = [Game]()
+    
+    //MARK: - IBOUTLETS
+    @IBOutlet weak var myFilterSegmentControll: UISegmentedControl!
+    @IBOutlet weak var myCollectionView: UICollectionView!
+    
+    //MARK: - IBACTIONS
+    @IBAction func filterChangeACTION(_ sender: Any) {
+        //Code
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        myCollectionView.delegate = self
+        myCollectionView.dataSource = self
+        myCollectionView.alwaysBounceVertical = true
+        
         // Do any additional setup after loading the view.
     }
 
@@ -32,4 +51,52 @@ class IRGameListViewController: UIViewController {
     }
     */
 
+}//TODO: - FIN DE LA CLASE
+
+extension IRGameListViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if listGames.count == 0{
+            let imageBackground = UIImageView(image: #imageLiteral(resourceName: "img_empty_list"))
+            imageBackground.contentMode = .scaleAspectFit
+            myCollectionView.backgroundView = imageBackground
+        }else{
+            myCollectionView.backgroundView = UIView()
+        }
+        return listGames.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let customCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! IRDetailCustomCell
+        
+        return customCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "editGameSegue", sender: self)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+

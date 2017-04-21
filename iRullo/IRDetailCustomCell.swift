@@ -10,4 +10,10 @@ import UIKit
 
 class IRDetailCustomCell: UICollectionViewCell {
     
+    @IBOutlet weak var myImageGAme: UIImageView!
+    @IBOutlet weak var myNameGame: UILabel!
+    @IBOutlet weak var myBorrowedLBL: UILabel!
+    @IBOutlet weak var myBorrowedToLBL: UILabel!
+    @IBOutlet weak var myBorrowedDateLBL: UILabel!
+    
 }
